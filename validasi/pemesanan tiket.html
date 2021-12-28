@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>untuk hasilnya dibawah</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        span {
+            visibility: hidden;
+            color: red;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            justify-content: center;
+            text-align: center;
+        }
+        body {
+            background-color: thistle;
+        }
+        #hasil {
+            justify-content: center;
+            text-align: center;
+            width: 200px;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pemesanan Tiket</h2>
+    <br>
+    <div class="container">
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" id="nama" placeholder="masukan nama" class="form-control" maxlength="30" minlength="3">
+            <span>*nama tidak boleh kosong</span>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" id="email" placeholder="masukan email" class="form-control">
+            <span>*emai tidak boleh kosong</span>
+        </div>
+        <div class="form-group">
+            <label>Jam keberangkatan</label>
+            <input type="time" id="jam" class="form-control">
+            <span>*jam keberangkatan tidak boleh kosong</span>
+        </div>
+        <div class="form-group">
+            <label>Tujuan</label>
+            <input type="text" id="tujuan" placeholder="masukan tujuan" class="form-control">
+            <span>*tujuan tidak boleh kosong</span>
+        </div>
+        <div class="form-group">
+            <label>Jumlah Tiket</label>
+            <input type="number" id="tiket" placeholder="masukan jumlah tiket" class="form-control">
+            <span>*jumlah tiket tidak boleh kosong</span>
+        </div>
+            <button onclick="validasi()" class="btn btn-primary">Submit</button>
+    </div>  
+        <div id="hasil"></div>
+
+    <script>
+        let nama = document.getElementById("nama")
+        let email = document.getElementById("email")
+        let jam = document.getElementById("jam")
+        let tujuan = document.getElementById("tujuan")
+        let tiket = document.getElementById("tiket")
+        
+        let span = document.getElementsByTagName("span")
+        let hasil = document.getElementById("hasil")
+
+        function validasi() {
+            if (nama.value == "" || nama.value.length >= 30) {
+                span[0].style.visibility = "visible"
+            } else {
+                hasil.innerHTML += nama.value + "<br>"
+            }
+
+            if (email.value == "") {
+                span[1].style.visibility = "visible"
+            } else {
+                hasil.innerHTML += email.value + "<br>"
+            }
+
+            if (jam.value == "") {
+                span[2].style.visibility = "visible"
+            } else {
+                hasil.innerHTML += jam.value + "<br>"
+            }
+            if (tujuan.value == "") {
+                span[3].style.visibility = "visible"
+            } else {
+                hasil.innerHTML += tujuan.value + "<br>"
+            }
+            if (tiket.value == "") {
+                span[4].style.visibility = "visible"
+            }
+        }
+    </script>
+</body>
+</html>

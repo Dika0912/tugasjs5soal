@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Login
+    </title>
+    <style>
+    body{
+	background: blue;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	font-family: sans-serif;
+    }
+    .container{
+	position: relative;
+	margin-top: 100px;
+	width: 450px;
+	height: auto;
+	background: #dedede;
+	border-radius: 5px;
+    }
+    .label{
+	padding: 10px 90px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #130f40;
+    }
+
+    </style>
+</head>
+<body>
+    <script src="otentikasi.js"></script>
+    <div class="container">
+    <div class="login">
+        <h3 class="label"> Login Validation </h3>
+        <hr>
+        <div class="uname">
+            <input id="uname" type="text" placeholder="Username">
+        </div>
+        <div class="pw">
+            <input id="pw" type="password" placeholder="Password">
+        </div>
+        <button value="Login" onclick="login()">Login</button>
+    </div>
+    </div>
+</body>
+</html>
